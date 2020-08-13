@@ -1,13 +1,23 @@
 import React from 'react';
-import Landing from './pages/Landing'
+
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from './Routes';
+import { Provider } from 'react-redux'
+import { initStore } from './store';
+
 import Header from './components/shared/Header'
 
-function App() {
+const store = initStore();
+
+const App = () => {
+
   return (
-    <div>
-      <Header/>
-      <Landing/>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Header/>
+        <Routes/>
+      </Router>
+    </Provider>
   );
 }
 

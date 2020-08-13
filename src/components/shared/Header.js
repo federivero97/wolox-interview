@@ -1,7 +1,5 @@
 import React from 'react';
-
-/* eslint-disable jsx-a11y/anchor-is-valid*/ 
-// eslint-disable-next-line 
+import { Link } from "react-router-dom";
 
  const Header = () => {
 
@@ -9,12 +7,16 @@ import React from 'react';
         <div id="navigation-bar">
             <nav>
                 <ul>
-                    <img src={process.env.PUBLIC_URL + '/assets/Images/logo_full_color.svg'} alt="Wolox Logo"/> 
-                    <li>Inicio</li>
+                    <Link to="/">
+                        <img src={process.env.PUBLIC_URL + '/assets/Images/logo_full_color.svg'} alt="Wolox Logo"/>
+                        <li>Inicio</li>
+                    </Link>
                     <li>Tecnologias</li>
                     <li>Beneficios</li>
                     <li>Requerimientos</li>
-                    <li>Login</li>
+                    <li>   
+                        <Link to="/login">Login</Link>
+                    </li>
                 </ul>
             </nav>
             

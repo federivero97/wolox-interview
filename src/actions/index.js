@@ -1,21 +1,13 @@
-import { techData } from '../store/data';
-//import axios from 'axios';
+import axios from 'axios';
 
-export const fetchTechs = () => {
-  return {
-    type: 'FETCH_TECHS',
-    techs: techData
-  }
-} 
-
-/*
 export const fetchTechs = () => dispatch => {
-  axios.get('http://private-anon-1a8e767dad-woloxfrontendinverview.apiary-proxy.com/techs')
+  axios.get('api/techs')
     .then(res => {
       const techs = res.data;
+      techs.sort((a, b) => a.tech.localeCompare(b.tech));
       dispatch({
         type: 'FETCH_TECHS',
         techs
       });
     })
-}*/
+}

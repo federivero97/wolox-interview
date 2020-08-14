@@ -4,6 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import Login from './pages/Login';
 import Landing from './pages/Landing';
 import TechListing from './pages/TechListing';
+import AuthRoute from './components/auth/AuthRoute';
+import GuestRoute from './components/auth/GuestRoute';
 
 const Routes = () => {
   return (
@@ -12,12 +14,12 @@ const Routes = () => {
         <Route exact path="/">
           <Landing />
         </Route>
-        <Route path="/login">
+        <GuestRoute path="/login">
           <Login />
-        </Route>
-        <Route path="/tech-listing">
-          <TechListing />
-        </Route>
+        </GuestRoute>
+        <AuthRoute path="/tech-listing">
+          <TechListing/>
+        </AuthRoute>
       </Switch>
     </div>
   )

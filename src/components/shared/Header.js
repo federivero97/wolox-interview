@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
- const Header = () => {
+const Header = ({username, isAuth, logout}) => {
 
     return (
         <div id="navigation-bar">
@@ -14,9 +15,25 @@ import { Link } from "react-router-dom";
                     <li>Tecnologias</li>
                     <li>Beneficios</li>
                     <li>Requerimientos</li>
-                    <li>   
-                        <Link to="/login">Login</Link>
-                    </li>
+                    { isAuth &&
+                        <>
+                            <li>   
+                                <Link to="/techs-listing"> Techs Listing </Link>
+                            </li>
+                            <li className="nav-item">
+                                <p onClick={logout} >
+                                    Logout
+                                </p>
+                            </li>
+                        </>
+                    }
+                    { !isAuth &&
+                        <>
+                            <li>   
+                                <Link to="/login"> Login </Link>
+                            </li>
+                        </>
+                    }
                 </ul>
             </nav>
             
@@ -25,4 +42,11 @@ import { Link } from "react-router-dom";
     )
  }
 
- export default Header;
+ const mapStateToProps = ({auth: {username, isAuth}}) => {
+    return {
+      username,
+      isAuth
+    }
+  }
+  
+  export default connect(mapStateToProps)(Header); 

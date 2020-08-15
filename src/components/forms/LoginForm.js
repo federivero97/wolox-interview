@@ -43,6 +43,17 @@ const LoginForm = ({onSubmit}) => {
                 {(message) => <p>{message}</p>}
                 </FormError>
             </div>
+
+            <div className="form-group">
+                <label htmlFor="keepOnline"> Keep Online</label>
+                <input      
+                ref={register()}
+                name="keepOnline"
+                type="checkbox"
+                className="form-control"
+                id="keepOnline"
+                />
+            </div>
             <button 
                 type="submit" 
                 className="btn">Submit

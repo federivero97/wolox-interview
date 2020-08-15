@@ -23,16 +23,20 @@ export const fetchTechs = () => dispatch => {
     .catch(error => Promise.reject(extractApiErrors(error.response || {})))
 }
 
-export const loginUser = (loginData) => {
-  return axios
-    .post('/api/login', loginData)
-    .then(res => res.data)
-    .catch(error => Promise.reject(extractApiErrors(error.response || {})))
+export const loginUser = async (loginData) => {
+  try {
+    const res = await axios
+      .post('/api/login', loginData);
+    return res.data;
+  }
+  catch (error) {
+    return await Promise.reject(extractApiErrors(error.response || {}));
+  }
 }
 
-export const userAuthenticated = (decodedToken) => {
+export const userAuthenticated = (token) => {
   return {
     type: 'USER_AUTHENTICATED',
-    username: decodedToken.username || ''
+    token: token || ''
   }
 } 

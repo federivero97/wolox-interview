@@ -12,10 +12,10 @@ const initAuthReducer = () => {
     }
   }
 
-  const username = (state = '', action) => {
+  const token = (state = '', action) => {
     switch(action.type) {
       case 'USER_AUTHENTICATED':
-        return action.username;
+        return action.token;
       case 'USER_SIGNED_OUT':
         return '';
       default:
@@ -25,7 +25,7 @@ const initAuthReducer = () => {
 
   return combineReducers({
     isAuth,
-    username
+    token
   });
 }
 

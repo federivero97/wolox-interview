@@ -4,40 +4,25 @@ import { Redirect } from 'react-router-dom';
 import ApiErrors from '../components/forms/ApiErrors';
 import { withAuth } from '../providers/AuthProvider';
 
-class Login extends React.Component {
+const Login = ({auth}) => {
 
-  constructor() {
-    super();
-    this.state = {
-      shouldRedirect: false,
-      errors: []
-    }
+  const [submited, setSubmited] = React.useState(false);
+  const [errors, setErrors] = React.useState([]);
+
+  const signIn = (loginData) => {
+    auth.signIn(loginData)
+      .then(_ => setSubmited(true))
+      .catch(errors => setErrors({errors}))
   }
 
-  signIn = (loginData) => {
-    this.props.auth.signIn(loginData)
-      .then(_ => this.setState({shouldRedirect: true}))
-      .catch(errors => this.setState({errors}))
-  }
-
-  render() {
-    const { errors, shouldRedirect } = this.state;
-
-    if (shouldRedirect) {
-      return <Redirect to={{pathname: '/'}} />
-    }
-
-    return (
-      <div className="form">
-          <h1 className="page-title">Login</h1>
-          {/* <!-- <div className="alert alert-success">
-            Some message
-          </div> --> */}
-          <LoginForm onSubmit={this.signIn} />
-          <ApiErrors errors={errors}/>
-      </div> 
-    )
-  }
+  return (
+    <div className="form">
+        <h1 className="page-title">Login</h1>
+        <LoginForm onSubmit={signIn} />
+        <ApiErrors errors={errors}/>
+        {submited ? (<Redirect to={{pathname: '/tech-listing'}} />) : null } 
+    </div> 
+  )
 }
 
 export default withAuth(Login);

@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loginUser, userAuthenticated } from '../actions';
-import jwt from 'jsonwebtoken';
-import moment from 'moment';
 
 const { createContext, useContext } = React;
 
@@ -10,61 +8,51 @@ const AuthContext = createContext(null);
 
 const AuthBaseProvider = ({children, dispatch}) => {
 
-    const checkAuthState = () => {
-        const decodedToken = decodeToken(getToken());
-        if (decodedToken && moment().isBefore(getExpiration(decodedToken))) {
-          dispatch(userAuthenticated(decodedToken))
-        } 
-    }
-
-    const getExpiration = (decodedToken) => {
-        return moment.unix(decodedToken.exp);
-      }
-    
     const getToken = () => {
-        return localStorage.getItem('wolox_token');
+        return localStorage.getItem('token');
     }
 
-    const decodeToken = token => {
-      return jwt.decode(token);
+    const checkAuthState = () => {
+        const token = getToken();
+        if (token){
+            dispatch(userAuthenticated(token))
+        } else {
+            dispatch(userAuthenticated())
+            dispatch({type: 'USER_SIGNED_OUT'});
+        }
     }
 
-  const signIn = (loginData) => {
-    return loginUser(loginData)
-      .then(token => {
-        localStorage.setItem('wolox_token', token);
-        const decodedToken = decodeToken(token);
-        dispatch(userAuthenticated(decodedToken))
+    const isAuthenticated = () => {
+        return getToken();
+    }
+
+    const signIn = async (loginData) => {
+        console.log('login')
+        const token = await loginUser(loginData);
+        if (loginData.keepOnline) {
+            localStorage.setItem('token', token);
+        }
+        dispatch(userAuthenticated(token));
         return token;
-      })
-  }
+    }
 
-  const signOut = () => {
-    localStorage.removeItem('wolox_token');
-    dispatch({type: 'USER_SIGNED_OUT'});
-  }
+    const signOut = () => {
+        localStorage.removeItem('token');
+        dispatch({type: 'USER_SIGNED_OUT'});
+    }
 
-  const isAuthenticated = () => {
-    const decodedToken = decodeToken(getToken());
-    return decodedToken && isTokenValid(decodedToken)
-  }
+    const authApi = {
+        signIn,
+        checkAuthState,
+        signOut,
+        isAuthenticated
+    }
 
-  const isTokenValid = (decodedToken) => {
-    return decodedToken//decodeToken && moment().isBefore(getExpiration(decodedToken));
-  }
-
-  const authApi = {
-    signIn,
-    checkAuthState,
-    signOut,
-    isAuthenticated
-  }
-
-  return (
+    return (
     <AuthContext.Provider value={authApi}>
-      {children}
+        {children}
     </AuthContext.Provider>
-  )
+    )
 }
 
 export const AuthProvider = connect()(AuthBaseProvider);

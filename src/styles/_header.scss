@@ -1,23 +1,52 @@
-nav {
-    margin: 50px;
+nav.navbar{
 
-    ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 70px 0;
+  width: 100%;
 
-        img {
-            float: left;
-            width: 200px;
-        }
+  div.nav-item-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-        li {
-            display: inline;
-            font-size: 17px;
-            color: black;
-            margin: 30px;
-            padding: 10px;
-            &:hover {
-                background-color: grey;
-            }
-
-        }
+  .nav-item {
+    font-family: 'Montserrat-Medium'; 
+    font-size: 20px;
+    margin: 0 40px;
+    text-align: center;
+    
+    img.nav-logo{
+      width: 200px;
+      margin: 0 20px;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .login-button {
+
+    height: 35px;
+    width: 150px;
+    margin-right: 0px;
+    font-family: 'Montserrat-Bold'; 
+    color: $main-blue-color;
+    background-color: white; 
+    border: 1px solid $main-blue-color;
+    border-radius: 50px;
+
+    &:hover{
+      background-color: $main-blue-color; 
+      color: white;
+    }
+  }
 }

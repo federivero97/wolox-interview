@@ -1,51 +1,52 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
+import { Link } from "react-scroll";
 
-const Header = ({token, logout}) => {
+const Header = ({location, token, logout}) => {
 
+  const loginButton = () => { 
     return (
-        <div id="navigation-bar">
-            <nav>
-                <ul>
-                    <Link to="/">
-                        <img src={process.env.PUBLIC_URL + '/assets/Images/logo_full_color.svg'} alt="Wolox Logo"/>
-                        <li>Inicio</li>
-                    </Link>
-                    <li>Tecnologias</li>
-                    <li>Beneficios</li>
-                    <li>Requerimientos</li>
-                    { token &&
-                        <>
-                            <li>   
-                                <Link to="/tech-listing"> Techs Listing </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/" onClick={logout} >
-                                    Logout
-                                </Link>
-                            </li>
-                        </>
-                    }
-                    { !token &&
-                        <>
-                            <li>   
-                                <Link to="/login"> Login </Link>
-                            </li>
-                        </>
-                    }
-                </ul>
-            </nav>
-            
-        </div>
-
+      <a className="nav-item" href='/login'><button className='login-button'> Login </button></a>
     )
- }
-
- const mapStateToProps = ({auth: {token}}) => {
-    return {
-      token
-    }
   }
-  
-  export default connect(mapStateToProps)(Header); 
+
+  const logoutButton = () => { 
+    return (
+      <button className="login-button" onClick={logout}> Logout </button>
+    )
+  }
+
+  return (
+    <div className="container">
+
+        <nav className='navbar'>
+          <a className="nav-item" href='/'>
+              <img className="nav-logo" src={process.env.PUBLIC_URL + '/assets/Images/logo_full_color.svg'} alt="wolox-logo"/>
+          </a>
+
+            {location.pathname==='/' ? 
+              <div className='nav-item-list'>
+                <Link className="nav-item" activeClass="active" to="welcome" spy={true} smooth={true} offset={-70} duration= {500}>Inicio</Link>
+                <Link className="nav-item" activeClass="active" to="techs" spy={true} smooth={true} offset={-70} duration= {500}>Tecnologias</Link>
+                <Link className="nav-item" activeClass="active" to="benefits" spy={true} smooth={true} offset={-70} duration= {500}>Beneficios</Link>
+                <Link className="nav-item" activeClass="active" to="requirements" spy={true} smooth={true} offset={-70} duration= {500}>Requerimientos</Link>
+              </div>
+            : null
+            }
+              {token ? logoutButton() : loginButton()}
+
+        </nav>
+
+    </div>
+  );
+}
+
+const mapStateToProps = ({auth: {token}}, props) => {
+  return {
+    token,
+    location: props.location
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(Header));

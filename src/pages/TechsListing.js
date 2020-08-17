@@ -4,7 +4,7 @@ import { fetchTechs } from '../actions';
 
 import TechCard from '../components/TechCard'
 
-const TechListing = () => {
+const TechsListing = () => {
 
   const techs = useSelector(state => state.techs);
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const TechListing = () => {
   useEffect(() => {
     const results = techs.filter(tech =>
       tech.type.includes(typeTech) &&
-      tech.tech.toLowerCase().includes(filterTech)
+      tech.tech.toLowerCase().includes(filterTech.toLowerCase())
     );
     setTechsFiltered(results);
   }, [typeTech, filterTech, sortTech, techs]);
@@ -45,16 +45,16 @@ const TechListing = () => {
     );
 
   return (
-    <div>
-      <div className="tech-filters">
-        <input
+    <div className='techs-listing'>
+      <div className="techs-filters">
+        <input className="filter-input"
           type="text"
           placeholder="Search"
           value={filterTech}
           onChange={handleFilterChange}
         />
 
-        <select defaultValue={''}
+        <select className="filter-type" defaultValue={''}
             onChange={handleTypeChange}>
           <option value=""> Todas </option>
           <option value="Back-End"> Back-End </option>
@@ -62,20 +62,22 @@ const TechListing = () => {
           <option value="Mobile"> Mobile </option>
         </select>
         
-        <select defaultValue={'Ascendente'}
+        <select className="filter-sort" defaultValue={'Ascendente'}
             onChange={handleSortChange}>
           <option value="Ascendente"> Ascendente </option>
           <option value="Descendente"> Descendente</option>
         </select>
       </div>
 
-      <div className="tech-list">  
+      <div className="techs-list">  
         { renderTechs(techsFiltered) }
       </div>
 
-      <p> {techsFiltered.length}/{techs.length} tecnologias encontradas </p>
+      <div className="techs-footer">
+        <p> {techsFiltered.length} / {techs.length}  <b>Tecnologías encontradas</b> </p>
+      </div>
     </div>
   )
 }
 
-export default TechListing; 
+export default TechsListing; 

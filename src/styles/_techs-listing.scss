@@ -1,0 +1,58 @@
+.techs-listing{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    div.techs-filters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+
+        * {
+            margin: 10px;
+            padding: 5px 20px;
+            font-family: 'Montserrat-Medium'; 
+            border: 1px solid $main-blue-color;
+            border-radius: 30px;
+
+            &:focus {
+              outline: none;
+            }               
+        }
+
+        input.filter-input {
+            width: 150px;
+        } 
+
+        select.filter-type {
+            width: 130px;
+        }
+
+        select.filter-sort {
+            width: 150px;
+        }
+    }
+
+    div.techs-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: space-around;
+        justify-content: center;
+    }
+
+    div.techs-footer {
+        display: flex;
+        align-self: flex-end;
+        align-content:space-around;
+        //width: 250px;
+        padding: 5px 25px;
+        font-family: 'Montserrat-Medium'; 
+        color: white;
+        background-color: $main-blue-color;
+        border: 1px solid $main-blue-color;
+        border-radius: 30px;
+    }
+}

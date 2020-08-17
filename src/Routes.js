@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Login from './pages/Login';
 import Landing from './pages/Landing';
-import TechListing from './pages/TechListing';
+import TechsListing from './pages/TechsListing';
 import AuthRoute from './components/auth/AuthRoute';
 import GuestRoute from './components/auth/GuestRoute';
 
@@ -17,8 +17,8 @@ const Routes = () => {
         <GuestRoute path="/login">
           <Login />
         </GuestRoute>
-        <AuthRoute path="/tech-listing">
-          <TechListing/>
+        <AuthRoute path="/techs-listing">
+          <TechsListing/>
         </AuthRoute>
       </Switch>
     </div>

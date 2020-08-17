@@ -1,43 +1,87 @@
 .form {
+  display: flex;
+  
   form {
-    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-family: 'Montserrat-Medium'; 
+    border: 1px solid $main-blue-color;
+    border-radius: 50px;
+
+    div.form-group {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+
+      div.form-input {
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+
+        label {
+         margin-right: 40px;
+         padding: 5px;
+        }
+
+        input {
+          width: 200px;
+          padding: 5px;
+          border: 1px solid $main-blue-color;
+          border-radius: 30px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      div.form-checkbox{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        input {
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    button {
+      height: 50px;
+      width: 250px;
+      margin: 30px 0;
+      font-family: 'Montserrat-Bold';
+      font-size: 20px; 
+      color: $main-blue-color;
+      background-color: white;
+      border: 1px solid $main-blue-color;
+      border-radius: 50px;
+  
+      &:hover{
+        color: white;
+        background-color: $main-blue-color; 
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   .alert {
-    p {
-      margin: 0;
-    }
-  }
-
-  .h1 {
-    font-weight: 700;
-    margin-bottom: 30px;
-  }
-  .image-container {
-    position: relative;
-
-    .img {
-      width: 100%;
-      border-radius: 5px;
-    }
-  }
-
-  .label {
-    font-size: 12px;
-  }
-
-  .form-text {
-    font-size: 13px;
-  }
-
-  .catchphrase {
-    text-align: center;
-    font-size: 42px;
-    position: absolute;
-    color: #f1f1f1;
-    padding: 40px;
-    background-color: rgba(0,0,0, 0.5);
-    margin-top: 50px;
-    letter-spacing: 1px;
+    width: 300px;
+    padding: 5px 20px;
+    background-color: #dd7676;
+    border-radius: 20px;
+    font-size: 15px;
   }
 }   

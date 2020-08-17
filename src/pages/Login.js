@@ -17,10 +17,9 @@ const Login = ({auth}) => {
 
   return (
     <div className="form">
-        <h1 className="page-title">Login</h1>
         <LoginForm onSubmit={signIn} />
         <ApiErrors errors={errors}/>
-        {submited ? (<Redirect to={{pathname: '/tech-listing'}} />) : null } 
+        {submited ? (<Redirect to={{pathname: '/techs-listing'}} />) : null } 
     </div> 
   )
 }

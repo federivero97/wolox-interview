@@ -27,7 +27,6 @@ const AuthBaseProvider = ({children, dispatch}) => {
     }
 
     const signIn = async (loginData) => {
-        console.log('login')
         const token = await loginUser(loginData);
         if (loginData.keepOnline) {
             localStorage.setItem('token', token);

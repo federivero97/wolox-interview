@@ -1,5 +1,5 @@
 div.landing{
-    font-family: 'Montserrat-Medium'; 
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -8,7 +8,7 @@ div.landing{
     justify-content: space-between;
 
     div.landing-welcome{
-        font-size: 10px;
+
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -20,9 +20,14 @@ div.landing{
         background-size: cover;
         
         div.welcome-text {
+            font-family: 'Montserrat-Regular'; 
             width: 450px;
             font-size: 40px;
             margin-bottom: 30px ;
+
+            b {
+                font-family: 'Montserrat-Medium'; 
+            }
         }
 
         div.welcome-img {
@@ -43,8 +48,9 @@ div.landing{
         width: 100%;
 
         div.techs-text {
-            width: 350px;
-            font-size: 30px;
+            width: 400px;
+            font-family: 'Montserrat-Regular'; 
+            font-size: 35px;
         }
 
         div.techs-img {
@@ -64,6 +70,7 @@ div.landing{
         background-color: $main-background-color;
         margin: 30px 0;
         width: 100%;
+        font-family: 'Montserrat-Medium'; 
 
         div.social-img {
             flex-grow: 4;
@@ -109,6 +116,10 @@ div.landing{
                     color: white;
                     background-color: $main-blue-color;
                 }
+
+                &:focus {
+                    outline: none;
+                  }
             }
         }
 
@@ -172,10 +183,12 @@ div.landing{
         font-size: 30px;
         margin: 30px 0;
         width: 100%;
+        font-family: 'Montserrat-Medium'; 
 
         ul {
             li {
-                font-size: 17px;
+                font-family: 'Montserrat-Regular'; 
+                font-size: 18px;
                 max-width: 500px;
             }
 
@@ -203,6 +216,12 @@ div.landing{
 
         h3{
             font-size: 40px;
+            font-family: 'Montserrat-Medium'; 
+        }
+
+        h2{
+            font-size: 30px;
+            font-family: 'Montserrat-Regular'; 
         }
 
         button {
@@ -220,14 +239,20 @@ div.landing{
                 color: $main-blue-color;
                 background-color: white;
             }
+
+            &:focus {
+                outline: none;
+              }
         }
     }
 
     span.blue-text {
+        font-family: 'Montserrat-Bold'; 
         color: $main-blue-color;
     }
 
     span.green-text {
+        font-family: 'Montserrat-Bold'; 
         color: $main-green-color;
     }
 }

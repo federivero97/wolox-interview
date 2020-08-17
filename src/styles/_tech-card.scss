@@ -1,39 +1,42 @@
-.tech-list {
+.tech-card {
 
-    z-index: 0;
-    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
+    border-radius: 30px;
+    margin: 20px;
+    border-radius: 40px;
+    border: 1px solid $main-blue-color;
 
-    .tech-card {
-        margin: 30px 30px;
-        width: 200px;
-        height: 300px;
-        border-radius: 40px;
-        box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-        //background-color: #00adee;
-        
-        .card-body {
-            padding: 8px 2px;
+    h2.card-title {
+        font-family: 'Montserrat-Medium'; 
+        font-size: 25px;
+    }
 
-            .card-img {
-                display: block;
-                margin-top: 10px;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-            }
+    .card-img {
+        display: flex;
+        margin: auto;
+    }
 
-            .card-title {
-                text-align: center;
-                border-radius: 0px 0px 40px 40px;
-                
-            }
+    .card-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px;
 
-            .card-text {
-                margin-left: 20px;
-            }
+        .card-text{
+            font-family: 'Montserrat-Medium'; 
+            font-size: 17px;
+        }
+
+        .card-detail{
+            display: flex;
+            flex-wrap: wrap;
+            font-family: 'Montserrat-Regular'; 
+            font-size: 15px;
+
         }
     }
-  } 
+
+}

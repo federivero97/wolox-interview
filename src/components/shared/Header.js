@@ -13,7 +13,9 @@ const Header = ({location, token, logout}) => {
 
   const logoutButton = () => { 
     return (
-      <button className="login-button" onClick={logout}> Logout </button>
+      <a className="nav-item" href='/'>
+        <button className="login-button" onClick={logout}> Logout </button>
+      </a>
     )
   }
 
@@ -26,7 +28,7 @@ const Header = ({location, token, logout}) => {
           </a>
 
             {location.pathname==='/' ? 
-              <div className='nav-item-list'>
+              <div className='nav-list-item'>
                 <Link className="nav-item" activeClass="active" to="welcome" spy={true} smooth={true} offset={-70} duration= {500}>Inicio</Link>
                 <Link className="nav-item" activeClass="active" to="techs" spy={true} smooth={true} offset={-70} duration= {500}>Tecnologias</Link>
                 <Link className="nav-item" activeClass="active" to="benefits" spy={true} smooth={true} offset={-70} duration= {500}>Beneficios</Link>
@@ -34,8 +36,7 @@ const Header = ({location, token, logout}) => {
               </div>
             : null
             }
-              {token ? logoutButton() : loginButton()}
-
+            {token ? logoutButton() : loginButton()}
         </nav>
 
     </div>

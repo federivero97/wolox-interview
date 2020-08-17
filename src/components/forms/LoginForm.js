@@ -6,58 +6,64 @@ import FormError from './FormError';
 const EMAIL_PATTERN = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const LoginForm = ({onSubmit}) => {
-
+ 
     const { register, handleSubmit, errors } = useForm();
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+            <h2> Login </h2>
             <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                ref={register({
-                    required: 'Email is required', 
-                    pattern: {value: EMAIL_PATTERN, message: 'Invalid email format!'}})}          
-                name="email"
-                type="email"
-                className="form-control"
-                id="email" 
-                />
+                <div className='form-input'>
+                    <label htmlFor="email"> Mail: </label>
+                    <input
+                        ref={register({
+                            required: 'Ingrese el mail', 
+                            pattern: {value: EMAIL_PATTERN, message: 'Formato de mail invalido!'}})}          
+                        name="email"
+                        type="email"
+                        className="form-control"
+                        id="email" 
+                    />
+                </div>
                 <FormError errors={errors} name="email">
-                {(message) => <p>{message}</p>}
+                    {(message) => <p>{message}</p>}
                 </FormError>
             </div>
             
             <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input 
-                ref={
-                    register({
-                    required: "Password is required!", 
-                    minLength: {value: 8, message: 'Minimum length of password is 8 characters!'}})
-                }      
-                name="password"
-                type="password"
-                className="form-control"
-                id="password"
-                />
+             <div className='form-input'>
+                    <label htmlFor="password"> Contraseña: </label>
+                    <input 
+                        ref={
+                            register({
+                            required: "Ingrese la contraseña.", 
+                            minLength: {value: 8, message: 'La contraseña debe tener al menos 8 caracteres.'}})
+                        }      
+                        name="password"
+                        type="password"
+                        className="form-control"
+                        id="password"
+                    />
+                </div>
                 <FormError errors={errors} name="password">
-                {(message) => <p>{message}</p>}
+                    {(message) => <p>{message}</p>}
                 </FormError>
             </div>
 
             <div className="form-group">
-                <label htmlFor="keepOnline"> Keep Online</label>
-                <input      
-                ref={register()}
-                name="keepOnline"
-                type="checkbox"
-                className="form-control"
-                id="keepOnline"
-                />
+                <div className='forms-checkbox'>
+                    <label htmlFor="keepOnline"> Mantenerse conectado </label>
+                    <input      
+                        ref={register()}
+                        name="keepOnline"
+                        type="checkbox"
+                        className="form-control"
+                        id="keepOnline"
+                    />
+                </div>
             </div>
-            <button 
-                type="submit" 
-                className="btn">Submit
-            </button>
+            <a href='/techs-listing'>
+              <button type="submit" className="btn"> Ingresar </button>
+            </a>
         </form>
     )
 }

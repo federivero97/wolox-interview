@@ -47,14 +47,14 @@ const TechsListing = () => {
   return (
     <div className='techs-listing'>
       <div className="techs-filters">
-        <input className="filter-input"
+        <input className="filter filter-input"
           type="text"
           placeholder="Search"
           value={filterTech}
           onChange={handleFilterChange}
         />
 
-        <select className="filter-type" defaultValue={''}
+        <select className="filter filter-type" defaultValue={''}
             onChange={handleTypeChange}>
           <option value=""> Todas </option>
           <option value="Back-End"> Back-End </option>
@@ -62,7 +62,7 @@ const TechsListing = () => {
           <option value="Mobile"> Mobile </option>
         </select>
         
-        <select className="filter-sort" defaultValue={'Ascendente'}
+        <select className="filter filter-sort" defaultValue={'Ascendente'}
             onChange={handleSortChange}>
           <option value="Ascendente"> Ascendente </option>
           <option value="Descendente"> Descendente</option>

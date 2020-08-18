@@ -3,13 +3,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-
+  
     div.techs-filters {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap; 
+        margin-bottom: 20px;
 
-        * {
+        .filter {
+            width: 150px;
             margin: 10px;
             padding: 5px 20px;
             font-family: 'Montserrat-Medium'; 
@@ -19,18 +21,6 @@
             &:focus {
               outline: none;
             }               
-        }
-
-        input.filter-input {
-            width: 150px;
-        } 
-
-        select.filter-type {
-            width: 130px;
-        }
-
-        select.filter-sort {
-            width: 150px;
         }
     }
 
@@ -47,7 +37,7 @@
         display: flex;
         align-self: flex-end;
         align-content:space-around;
-        //width: 250px;
+        margin-top: 20px;
         padding: 5px 25px;
         font-family: 'Montserrat-Medium'; 
         color: white;

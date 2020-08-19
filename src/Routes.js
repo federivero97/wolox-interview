@@ -22,7 +22,7 @@ const Routes = () => {
         </Route>
       </Switch>
     </div>
-  )
-}
+  );
+};
 
 export default Routes; 

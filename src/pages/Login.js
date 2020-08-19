@@ -9,17 +9,15 @@ const Login = ({auth}) => {
 
   const signIn = (loginData) => {
     auth.signIn(loginData)
-    .then(_ => setSubmited(true))
-
-    
-  }
+    .then(() => setSubmited(true));
+  };
 
   return (
     <div className="form">
         <LoginForm onSubmit={signIn}/>
         {submited ? (<Redirect to={{pathname: '/techs-listing'}} />) : null } 
     </div> 
-  )
-}
+  );
+};
 
 export default withAuth(Login);

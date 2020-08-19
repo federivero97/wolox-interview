@@ -8,14 +8,14 @@ const Header = ({location, token, logout}) => {
   const loginButton = () => { 
     return (
       <a className="nav-item" href='/login'><button className='login-button'> Login </button></a>
-    )
-  }
+    );
+  };
 
   const logoutButton = () => { 
     return (
       <button className="login-button" onClick={logout}> Logout </button>
-    )
-  }
+    );
+  };
 
   return (
     <div className="container">
@@ -39,13 +39,13 @@ const Header = ({location, token, logout}) => {
 
     </div>
   );
-}
+};
 
 const mapStateToProps = ({auth: {token}}, props) => {
   return {
     token,
     location: props.location
-  }
-}
+  };
+};
 
 export default withRouter(connect(mapStateToProps)(Header));

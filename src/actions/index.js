@@ -8,7 +8,7 @@ export const extractApiErrors = (resError) => {
   }
 
   return errors;
-}
+};
 
 export const fetchTechs = () => dispatch => {
   axios.get('/api/techs')
@@ -20,8 +20,8 @@ export const fetchTechs = () => dispatch => {
         techs
       });
     })
-    .catch(error => Promise.reject(extractApiErrors(error.response || {})))
-}
+    .catch(error => Promise.reject(extractApiErrors(error.response || {})));
+};
 
 export const loginUser = async (loginData) => {
   try {
@@ -32,11 +32,11 @@ export const loginUser = async (loginData) => {
   catch (error) {
     return await Promise.reject(extractApiErrors(error.response || {}));
   }
-}
+};
 
 export const userAuthenticated = (token) => {
   return {
     type: 'USER_AUTHENTICATED',
     token: token || ''
-  }
-} 
+  };
+};

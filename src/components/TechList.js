@@ -1,5 +1,5 @@
 import React from 'react';
-import TechCard from '../components/TechCard'
+import TechCard from '../components/TechCard';
 
 
 const TechsList = ({techs}) => {
@@ -9,6 +9,6 @@ const TechsList = ({techs}) => {
             {techs.map(tech => <TechCard tech={tech} key={tech.tech}/>)}
         </div>
     );
-}
+};
 
 export default TechsList;

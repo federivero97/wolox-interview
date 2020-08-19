@@ -7,7 +7,7 @@ export function initStore() {
     const reducers = combineReducers({
         techs,
         auth
-    })
+    });
   
     const store = createStore(reducers, applyMiddleware(thunk));
 

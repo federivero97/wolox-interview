@@ -74,7 +74,7 @@ const TechsListing = () => {
         <p> {techsFiltered.length} / {techs.length}  <b>Tecnologías encontradas</b> </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TechsListing; 

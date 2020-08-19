@@ -11,13 +11,13 @@ const AuthRoute = ({token, children, ...rest}) => {
       React.cloneElement(onlyChild, {...rest, ...props}) : 
       <Redirect to={{pathname: '/login'}} />  
     }/>
-  )
-}
+  );
+};
 
 const mapStateToProps = ({auth: {token}}) => {
   return {
     token
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(AuthRoute); 

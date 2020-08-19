@@ -10,7 +10,7 @@ const initAuthReducer = () => {
       default:
         return state;
     }
-  }
+  };
 
   const token = (state = '', action) => {
     switch(action.type) {
@@ -21,13 +21,13 @@ const initAuthReducer = () => {
       default:
         return state;
     }
-  }
+  };
 
   return combineReducers({
     isAuth,
     token
   });
-}
+};
 
 const auth = initAuthReducer();
 export default auth; 

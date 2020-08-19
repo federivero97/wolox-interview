@@ -3,8 +3,7 @@ import React from 'react';
 const TechCard = ({tech}) => {
 
     return (
-    <div className="tech-card">
-
+        <div className="tech-card">
             <h2 className="card-title">{tech.tech}</h2>
             <img className="card-img" src={tech.logo} alt={tech.tech} />
             
@@ -31,8 +30,8 @@ const TechCard = ({tech}) => {
                     <span className="card-detail"> {tech.type}</span>
                 </div>
             </div>
-    </div>
-    )
-}
+        </div>
+    );
+};
   
 export default TechCard;

@@ -65,7 +65,7 @@ const LoginForm = ({onSubmit}) => {
             <button type="submit" className="btn"> Ingresar </button>
             
         </form>
-    )
-}
+    );
+};
 
 export default LoginForm; 

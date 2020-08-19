@@ -1,7 +1,6 @@
 import React from 'react';
 import TechCard from '../components/TechCard';
 
-
 const TechsList = ({techs}) => {
     
     return (

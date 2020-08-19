@@ -46,7 +46,7 @@ const TechsListing = () => {
       <div className="techs-filters">
         <input className="filter filter-input"
           type="text"
-          placeholder="Search"
+          placeholder="Buscar"
           value={filterTech}
           onChange={handleFilterChange}
         />

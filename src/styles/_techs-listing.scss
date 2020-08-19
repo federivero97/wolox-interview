@@ -19,7 +19,7 @@
             border: 1px solid $main-blue-color;
             border-radius: 30px;
 
-            &:focus {
+            &:focus,&:hover {
                 background-color: $main-blue-color;
                 color: white;
                 outline: none;

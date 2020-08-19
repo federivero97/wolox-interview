@@ -29,14 +29,17 @@
          margin-right: 40px;
          padding: 5px;
         }
-
+        
         input {
           width: 200px;
-          padding: 5px;
+          padding: 5px 20px;
           border: 1px solid $main-blue-color;
           border-radius: 30px;
+          font-family: 'Montserrat-Medium'; 
 
-          &:focus {
+          &:focus,&:hover {
+            background-color: $main-blue-color;
+            color: white;
             outline: none;
           }
         }

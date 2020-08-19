@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTechs } from '../actions';
 
-import TechCard from '../components/TechCard'
+const TechList = lazy(() => import('../components/TechList'));
 
 const TechsListing = () => {
 
@@ -32,6 +32,7 @@ const TechsListing = () => {
   }, [dispatch]);
 
   useEffect(() => {
+    setTechsFiltered(null);
     const results = techs.filter(tech =>
       tech.type.includes(typeTech) &&
       tech.tech.toLowerCase().includes(filterTech.toLowerCase())
@@ -39,12 +40,8 @@ const TechsListing = () => {
     setTechsFiltered(results);
   }, [typeTech, filterTech, sortTech, techs]);
 
-  const renderTechs = (techs) =>
-    techs.map(tech => 
-      <TechCard tech={tech} key={tech.tech}/>
-    );
-
   return (
+    
     <div className='techs-listing'>
       <div className="techs-filters">
         <input className="filter filter-input"
@@ -69,9 +66,9 @@ const TechsListing = () => {
         </select>
       </div>
 
-      <div className="techs-list">  
-        { renderTechs(techsFiltered) }
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TechList techs={techsFiltered}/>
+      </Suspense>
 
       <div className="techs-footer">
         <p> {techsFiltered.length} / {techs.length}  <b>Tecnologías encontradas</b> </p>

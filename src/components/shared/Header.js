@@ -13,9 +13,7 @@ const Header = ({location, token, logout}) => {
 
   const logoutButton = () => { 
     return (
-      <a className="nav-item" href='/'>
-        <button className="login-button" onClick={logout}> Logout </button>
-      </a>
+      <button className="login-button" onClick={logout}> Logout </button>
     )
   }
 

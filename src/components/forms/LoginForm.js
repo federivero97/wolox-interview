@@ -61,7 +61,7 @@ const LoginForm = ({onSubmit}) => {
                     />
                 </div>
             </div>
-            
+
             <button type="submit" className="btn"> Ingresar </button>
             
         </form>

@@ -9,7 +9,7 @@ const GuestRoute = ({token, children, ...rest}) => {
   return (
     <Route {...rest} render={(props) => !token||!authService.isAuthenticated() ?
       React.cloneElement(onlyChild, {...rest, ...props}) : 
-      <Redirect to={{pathname: '/'}} />  
+      <Redirect to={{pathname: '/techs-listing'}} />  
     }/>
   )
 }

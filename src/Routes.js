@@ -11,15 +11,15 @@ const Routes = () => {
   return (
     <div className="container">
       <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <GuestRoute path="/login">
+        <GuestRoute exact path="/login">
           <Login />
         </GuestRoute>
-        <AuthRoute path="/techs-listing">
+        <AuthRoute exact path="/techs-listing">
           <TechsListing/>
         </AuthRoute>
+        <Route path="/">
+          <Landing />
+        </Route>
       </Switch>
     </div>
   )

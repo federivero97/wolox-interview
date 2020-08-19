@@ -61,9 +61,9 @@ const LoginForm = ({onSubmit}) => {
                     />
                 </div>
             </div>
-            <a href='/techs-listing'>
-              <button type="submit" className="btn"> Ingresar </button>
-            </a>
+            
+            <button type="submit" className="btn"> Ingresar </button>
+            
         </form>
     )
 }

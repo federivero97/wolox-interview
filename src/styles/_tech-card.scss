@@ -1,0 +1,68 @@
+.tech-card {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+    border-radius: 40px;
+    border: 1px solid $main-blue-color;
+    background-color: white;
+
+    &:hover {
+        transform: scale(1.1);
+        color: white;
+        background-color: $main-blue-color;
+
+    }
+
+    h2.card-title {
+        font-family: 'Montserrat-Medium'; 
+        font-size: 25px;
+    }
+
+    .card-img {
+        display: flex;
+        //margin: auto;
+        width: 50%;
+    }
+
+    .card-info {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px 20px;
+
+        &:hover {
+            border-radius: 40px;
+            border: 0px solid $main-blue-color;
+            background-color: $main-blue-color;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            //flex-wrap: wrap;
+            align-items: center;
+            margin: 5px 10px;
+
+            .card-text{
+                font-family: 'Montserrat-Medium'; 
+                font-size: 17px;
+                margin: 5px;
+            }
+
+            .card-detail{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 5px;
+                max-width: 100px;
+                font-family: 'Montserrat-Regular'; 
+                font-size: 15px;
+                text-align: center;
+            }
+        }
+    }
+}

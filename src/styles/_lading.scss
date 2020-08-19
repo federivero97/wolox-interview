@@ -1,0 +1,264 @@
+div.landing{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
+
+    div.landing-welcome{
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin: 30px 0;
+        background-image: url('/assets/Backgrounds/Bg_Header.png');
+        background-size: cover;
+        
+        div.welcome-text {
+            font-family: 'Montserrat-Regular'; 
+            width: 450px;
+            font-size: 40px;
+            margin-bottom: 30px ;
+
+            b {
+                font-family: 'Montserrat-Medium'; 
+            }
+        }
+
+        div.welcome-img {
+            img{
+                width: 450px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    div.landing-techs{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin: 30px 0;
+        width: 100%;
+
+        div.techs-text {
+            width: 400px;
+            font-family: 'Montserrat-Regular'; 
+            font-size: 35px;
+        }
+
+        div.techs-img {
+            img {
+                width: 450px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    div.landing-social{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $main-background-color;
+        margin: 30px 0;
+        width: 100%;
+        font-family: 'Montserrat-Medium'; 
+
+        div.social-img {
+            flex-grow: 4;
+            background-image: url('/assets/Images/img_woloxer.png');
+            background-position: relative;
+            background-size: cover;
+            font-size: 45px;
+            height: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            div.twitter-acount {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                .twitter-logo{
+                    width: 60px;
+                }
+
+                span {
+                    font-size: 15px; 
+                    color: white;
+                }
+            }
+            
+            button {
+                height: 50px;
+                width: 250px;
+                margin-right: 0px;
+                font-family: 'Montserrat-Bold';
+                font-size: 20px; 
+                color: white;
+                background-color: transparent;  
+                border: 1px solid $main-blue-color;
+                border-radius: 50px;
+            
+                &:hover{
+                    color: white;
+                    background-color: $main-blue-color;
+                }
+
+                &:focus {
+                    outline: none;
+                  }
+            }
+        }
+
+        div.social-text {
+            flex-grow: 3;
+            text-align: center;
+            font-size: 40px;
+            width: 150px;
+            margin: 30px;
+        }
+    }
+
+    div.landing-benefits{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Montserrat-Regular';
+        margin: 30px 0;
+        width: 100%;
+
+        div.benefits-title{
+            font-size: 30px;
+        }
+
+        div.benefits-list{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+
+            div.benefits-item{
+                width: 160px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0 20px;
+                img.benefits-img {
+                    margin: 10px;
+                    width: 90px;
+                }
+
+                p.benefits-detail {
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    div.landing-requirements{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 30px;
+        margin: 30px 0;
+        width: 100%;
+        font-family: 'Montserrat-Medium'; 
+
+        ul {
+            li {
+                font-family: 'Montserrat-Regular'; 
+                font-size: 18px;
+                max-width: 500px;
+            }
+
+            li.first-item{
+                list-style-image: url('/assets/Images/Ic_Bullet_1.svg');
+            }
+
+            li.second-item{
+                list-style-image: url('/assets/Images/Ic_Bullet_2.svg');
+            }
+
+            li.third-item{
+                list-style-image: url('/assets/Images/Ic_Bullet_3.svg');
+            }
+        }
+    }
+
+    div.landing-footer{
+
+        text-align: center;
+        width: 100%;
+        background-image: url('/assets/Backgrounds/Bg_Footer.png');
+        background-size: cover;
+
+        h3{
+            font-size: 40px;
+            font-family: 'Montserrat-Medium'; 
+        }
+
+        h2{
+            font-size: 30px;
+            font-family: 'Montserrat-Regular'; 
+        }
+
+        button {
+            height: 50px;
+            width: 250px;
+            margin: 30px 0;
+            font-family: 'Montserrat-Bold';
+            font-size: 20px; 
+            color: white;
+            background-color: $main-blue-color;  
+            border: 1px solid $main-blue-color;
+            border-radius: 50px;
+        
+            &:hover{
+                color: $main-blue-color;
+                background-color: white;
+            }
+
+            &:focus {
+                outline: none;
+              }
+        }
+    }
+
+    span.blue-text {
+        font-family: 'Montserrat-Bold'; 
+        color: $main-blue-color;
+    }
+
+    span.green-text {
+        font-family: 'Montserrat-Bold'; 
+        color: $main-green-color;
+    }
+}
+
+hr {
+    width: 85%;
+    border: 0;
+    box-shadow: 0 0 10px 5px $main-background-color;
+}

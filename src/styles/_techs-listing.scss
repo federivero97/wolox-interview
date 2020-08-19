@@ -1,0 +1,48 @@
+.techs-listing{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 20px;
+
+    div.techs-filters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        margin-bottom: 20px;
+
+        .filter {
+            width: 200px;
+            margin: 10px;
+            padding: 5px 20px;
+            font-family: 'Montserrat-Medium'; 
+            border: 1px solid $main-blue-color;
+            border-radius: 30px;
+
+            &:focus,&:hover {
+                background-color: $main-blue-color;
+                color: white;
+                outline: none;
+            }               
+        }
+    }
+
+    div.techs-footer {
+        display: flex;
+        align-self: flex-end;
+        align-content:space-around;
+        margin: 20px 10px 0 0;
+        padding: 5px 25px;
+        text-align: center;
+        font-family: 'Montserrat-Medium'; 
+        color: $main-blue-color;
+        background-color: white;
+        border: 1px solid $main-blue-color;
+        border-radius: 30px;
+
+        &:hover {
+            color: white;
+            background-color: $main-blue-color;
+        }
+    }
+}

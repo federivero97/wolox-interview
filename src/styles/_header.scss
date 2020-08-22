@@ -42,13 +42,9 @@ nav.navbar{
     border: 1px solid $main-blue-color;
     border-radius: 50px;
 
-    &:hover{
+    &:hover, &:focus {
       background-color: $main-blue-color; 
       color: white;
-    }
-
-    &:focus {
-      outline: none;
     }
   }
 }

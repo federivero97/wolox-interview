@@ -15,6 +15,9 @@ export const fetchTechs = () => dispatch => {
     .then(res => {
       const techs = res.data;
       techs.sort((a, b) => a.tech.localeCompare(b.tech));
+      techs.forEach((tech, i) => {
+        tech.id = i + 1;
+      });
       dispatch({
         type: 'FETCH_TECHS',
         techs

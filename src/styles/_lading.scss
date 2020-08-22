@@ -111,15 +111,11 @@ div.landing{
                 background-color: transparent;  
                 border: 1px solid $main-blue-color;
                 border-radius: 50px;
-            
-                &:hover{
+
+                &:hover, &:focus{
                     color: white;
                     background-color: $main-blue-color;
                 }
-
-                &:focus {
-                    outline: none;
-                  }
             }
         }
 
@@ -235,14 +231,10 @@ div.landing{
             border: 1px solid $main-blue-color;
             border-radius: 50px;
         
-            &:hover{
+            &:hover, &:focus{
                 color: $main-blue-color;
                 background-color: white;
             }
-
-            &:focus {
-                outline: none;
-              }
         }
     }
 

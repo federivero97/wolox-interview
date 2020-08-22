@@ -1,4 +1,5 @@
 import React from 'react';
+import { Bounce } from "react-awesome-reveal";
 
 const Landing = () => {
 
@@ -34,9 +35,11 @@ const Landing = () => {
             <img className='twitter-logo' src={process.env.PUBLIC_URL + '/assets/Images/Ic_Twitter.png'} alt="Twitter img"/>
             <span> @Wolox </span>
           </div>
+          <Bounce triggerOnce>
           <a target='_blank' rel="noopener noreferrer" href='https://twitter.com/Wolox'>
             <button> Siguenos </button>
           </a>
+          </Bounce>
         </div>
         <div className='social-text'>
           <span>Trabajamos para </span>
@@ -51,7 +54,7 @@ const Landing = () => {
           <p> Entre los beneficios que ofrecemos se encuentran ;) </p>
         </div>
         <div className='benefits-list'>
-
+          <Bounce cascade>
           <div className='benefits-item'>
            <img className='benefits-img' src={process.env.PUBLIC_URL + '/assets/Images/Ic_Hour.svg'} alt="Hour img"/>
            <p className='benefits-detail'> Flexibilidad Horaria </p>
@@ -81,6 +84,7 @@ const Landing = () => {
            <img className='benefits-img' src={process.env.PUBLIC_URL + '/assets/Images/Ic_brain.svg'} alt="Brain img"/>
            <p className='benefits-detail'> Trabajar en ultimas tecnologias </p>
           </div>
+          </Bounce>
         </div>
       </div>
 
@@ -110,9 +114,11 @@ const Landing = () => {
         <div>
           <h3>Gracias por <span className='blue-text'>completar el ejercicio</span></h3>
           <h2>Te invitamos a ver más informacion</h2>
+          <Bounce triggerOnce>
           <a target='_blank' rel="noopener noreferrer" href='https://www.wolox.com.ar/'>
                   <button> Conocer más </button>
           </a>
+          </Bounce>
         </div>
         <img className='footer-img' src={process.env.PUBLIC_URL + '/assets/Images/Ic_Wolox_Footer.svg'} alt="Wolox Footer"/>
       </div>

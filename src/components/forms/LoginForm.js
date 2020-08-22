@@ -20,7 +20,7 @@ const LoginForm = ({onSubmit}) => {
                             pattern: {value: EMAIL_PATTERN, message: 'Formato de mail invalido!'}})}          
                         name="email"
                         type="email"
-                        className="form-control"
+                        className="input-email"
                         id="email" 
                     />
                 </div>
@@ -40,7 +40,7 @@ const LoginForm = ({onSubmit}) => {
                         }      
                         name="password"
                         type="password"
-                        className="form-control"
+                        className="input-password"
                         id="password"
                     />
                 </div>
@@ -56,7 +56,6 @@ const LoginForm = ({onSubmit}) => {
                         ref={register()}
                         name="keepOnline"
                         type="checkbox"
-                        className="form-control"
                         id="keepOnline"
                     />
                 </div>

@@ -27,7 +27,7 @@ const Landing = () => {
 
       <div id='social' className='landing-social'>
         <div className='social-img'>
-          <div>
+          <div className='woloxers'>
             <span className='green-text'>350 + </span>
             <span className='blue-text'>Woloxers</span>
           </div>
@@ -51,7 +51,7 @@ const Landing = () => {
 
       <div id='benefits' className='landing-benefits'>
         <div className='benefits-title'>
-          <p> Entre los beneficios que ofrecemos se encuentran ;) </p>
+          <p> Entre los beneficios que ofrecemos se encuentran <span className='blue-text'>;)</span></p>
         </div>
         <div className='benefits-list'>
           <Bounce cascade>

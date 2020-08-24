@@ -22,8 +22,6 @@
     }
 
     .card-img {
-        display: flex;
-        //margin: auto;
         width: 50%;
     }
 
@@ -44,8 +42,9 @@
         div {
             display: flex;
             flex-direction: row;
-            //flex-wrap: wrap;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             margin: 5px 10px;
 
             .card-text{

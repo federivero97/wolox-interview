@@ -16,23 +16,26 @@
       flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
-      margin: 20px;
+      margin: 10px;
 
       div.form-input {
         margin: 10px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
 
         label {
-         margin-right: 40px;
-         padding: 5px;
-         font-size: 20px; 
+          flex-wrap: wrap;
+          width: 150px;
+          text-align: center;
+          font-size: 20px; 
         }
         
         input {
           width: 200px;
+          margin: 10px;
           padding: 5px 20px;
           border: 1px solid $main-blue-color;
           border-radius: 30px;
@@ -50,6 +53,13 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin: 10px;
+        
+        input{
+          width: 50px;
+        }
       }
     }
 
@@ -74,11 +84,46 @@
   .alert {
     width: 200px;
     padding: 0px 20px;
+    margin: auto;
     color: white;
     background-color: $main-red-color;
     border: 1px solid $main-red-color;
     border-radius: 20px;
     font-size: 15px;
     font-family: 'Montserrat-Medium'; 
+    text-align: center;
+  }
+
+  @media (max-width: 400px){
+
+    form {
+
+      div.form-group {
+        margin: 0;
+
+        div.form-input {
+          width: 220px;
+        }
+
+        label {
+          width: 100px;
+          font-size: 15px; 
+        }
+
+        input {
+          width: 100px;
+          font-size: 12px; 
+        }
+      }
+      button {
+        width: 150px;
+        font-size: 15px;
+      }
+    }
+
+    .alert {
+      width: 100px;
+      font-size: 12px;
+    }
   }
 }   

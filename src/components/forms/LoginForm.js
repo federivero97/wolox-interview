@@ -50,7 +50,7 @@ const LoginForm = ({onSubmit}) => {
             </div>
 
             <div className="form-group">
-                <div className='forms-checkbox'>
+                <div className='form-checkbox'>
                     <label htmlFor="keepOnline"> Mantenerse conectado </label>
                     <input      
                         ref={register()}

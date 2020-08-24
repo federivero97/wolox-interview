@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const extractApiErrors = (resError) => {
-  let errors = [{title: 'Error!', detail: 'Ooops, something went wrong!'}];
+  let errors = [{title: 'Error!', detail: 'Ooops! Algo salio mal.'}];
 
   if (resError && resError.data && resError.data.errors) {
     errors = resError.data.errors;
